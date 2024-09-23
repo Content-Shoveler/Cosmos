@@ -506,6 +506,23 @@ export interface ApiAstralAstral extends Struct.CollectionTypeSchema {
     Root: Schema.Attribute.Boolean;
     Satellites: Schema.Attribute.Relation<'oneToMany', 'api::astral.astral'>;
     Orbits: Schema.Attribute.Relation<'manyToOne', 'api::astral.astral'>;
+    Size: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    Information: Schema.Attribute.JSON;
+    Color: Schema.Attribute.String;
+    ZOffset: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    Elliptic: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    EllipticOrientation: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    Mass: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -40,6 +40,37 @@
       "relation": "manyToOne",
       "target": "api::astral.astral",
       "inversedBy": "Satellites"
+    },
+    "Size": {
+      "type": "decimal",
+      "default": 1,
+      "required": true
+    },
+    "Information": {
+      "type": "json"
+    },
+    "Color": {
+      "type": "string"
+    },
+    "ZOffset": {
+      "type": "decimal",
+      "required": true,
+      "default": 1
+    },
+    "Elliptic": {
+      "required": true,
+      "default": 1,
+      "type": "decimal"
+    },
+    "EllipticOrientation": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "Mass": {
+      "type": "decimal",
+      "required": true,
+      "default": 1
     }
   }
 }
