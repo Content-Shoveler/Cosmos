@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "astrals",
+  "info": {
+    "singularName": "astral",
+    "pluralName": "astrals",
+    "displayName": "Astral",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Blackhole",
+        "Star",
+        "Planet",
+        "Moon"
+      ],
+      "default": "Planet",
+      "required": true
+    },
+    "Root": {
+      "type": "boolean"
+    },
+    "Satellites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::astral.astral",
+      "mappedBy": "Orbits"
+    },
+    "Orbits": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::astral.astral",
+      "inversedBy": "Satellites"
+    }
+  }
+}
